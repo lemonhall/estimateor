@@ -67,3 +67,19 @@ A：有两个方案：
 #
 
 
+=============
+
+1、可视化代码编辑器的地址
+https://github.com/jagenjo/litegraph.js
+
+2、下载两个文件
+downloading the build/litegraph.js and css/litegraph.css version from this repository.
+
+3、引用
+    <link rel="stylesheet" type="text/css" href="litegraph.css">
+    <script type="text/javascript" src="litegraph.js"></script>
+
+4、锚点
+
+
+
