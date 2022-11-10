@@ -1,3 +1,4 @@
+![image](https://user-images.githubusercontent.com/637919/201090659-ca34d351-c161-46ed-866b-3b8163ce25fc.png)
 
 1、项目地址
 https://github.com/dream-num/Luckysheet
