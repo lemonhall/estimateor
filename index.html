@@ -8,12 +8,31 @@
 <script src="./luckysheet.umd.js"></script>
 
     <link rel="stylesheet" type="text/css" href="./litegraph.css">
+    <link rel="stylesheet" type="text/css" href="./litegraph-editor.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+
     <script type="text/javascript" src="./litegraph.js"></script>
+    <script type="text/javascript" src="./litegraph-editor.js"></script>
+    <script type="text/javascript" src="./defaults.js"></script>
+
+    <script type="text/javascript" src="./src/nodes/base.js"></script>
+    <script type="text/javascript" src="./src/nodes/logic.js"></script>
+    <script type="text/javascript" src="./src/nodes/events.js"></script>
+    <script type="text/javascript" src="./src/nodes/math.js"></script>
+    <script type="text/javascript" src="./src/nodes/strings.js"></script>
+    <script type="text/javascript" src="./src/nodes/interface.js"></script>
+    <script type="text/javascript" src="./src/nodes/input.js"></script>
+    <script type="text/javascript" src="./src/nodes/估值.js"></script>
+
+    <script type="text/javascript" src="./src/nodes/others.js"></script>
 
 </head>
-<body>
-<div id="luckysheet" style="float:left;width:59%;height:100%;margin-left: 10px;"></div>
-<canvas id='mycanvas' width="800" height="720" style="float:left;width:39%;height:100%;border: 1px solid;margin-left: 5px;"></canvas>
+<body style='width:100%; height:100%'>
+<div id="luckysheet" style="margin:0px;padding:0px;float:left;width:59%;height:100%;left: 0px;top: 0px;"></div>
+<div style="float:left;width:39%;height:100%;">
+    <div id="main"></div>
+</div>
 <script>
     $(function () {
         //Configuration item
@@ -27,24 +46,12 @@
 </script>
 
 <script>
-        var graph = new LGraph();
+        var editor = new LiteGraph.Editor("main",{miniwindow:false});
+        window.graphcanvas = editor.graphcanvas;
+        window.graph = editor.graph;
 
-        var canvas = new LGraphCanvas("#mycanvas", graph);
-
-        var node_const = LiteGraph.createNode("basic/const");
-        node_const.pos = [100,100];
-        node_const.title = "项目类型"
-        graph.add(node_const);
-        node_const.setValue(4.5);
-
-        var node_watch = LiteGraph.createNode("basic/watch");
-        node_watch.pos = [200,200];
-        node_watch.title = "监听节点"
-        graph.add(node_watch);
-
-        node_const.connect(0, node_watch, 0 );
-
-        graph.start()
+        //enable scripting
+        LiteGraph.allow_scripts = true;
 </script>
 
 
